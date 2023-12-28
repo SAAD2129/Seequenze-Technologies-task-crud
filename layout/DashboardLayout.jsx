@@ -5,10 +5,10 @@ import React from "react";
 const DashboardLayout = ({ children }) => {
   return (
     <div className="flex h-[100vh]">
-      <div className="w-1/4">
+      <div className="w-1/4 side absolute !z-40">
         <Sidebar />
       </div>
-      <div className="w-3/4  left-[241px] bg-black">
+      <div className="layout w-3/4">
         <Navbar />
         {children}
       </div>

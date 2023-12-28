@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   background-color: #f3f3f3;
+}
+
+.layout {
+  padding-left: 241px;
+}
+
+.nav {
+  z-index: 20;
+}
+
+.side {
+  z-index: 30;
+}
+
+@media (max-width: 768px) {
+
+  .layout {
+    width: 100%;
+    padding-left: 0;
+  }
 }

@@ -1,9 +1,30 @@
+import { useGlobalHook } from "@/states/Context";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
+  const { showMenu, setShowMenu } = useGlobalHook();
   return (
-    <div className="w-[241px] h-full bg-white">
+    <div
+      className={`w-[241px] md:translate-x-0 transition-all duration-300 ${
+        showMenu ? "translate-x-0" : "-translate-x-full"
+      } fixed h-full bg-white`}
+    >
+      <button
+        className={`block md:hidden absolute top-3.5 ${
+          showMenu ? "left-2.5" : "left-2.5"
+        }  z-50`}
+      >
+        {showMenu && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src="/x-circle.svg"
+            onClick={() => setShowMenu(false)}
+            alt=""
+            className="w-8 h-8 "
+          />
+        )}
+      </button>
       <div className="">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" className="py-4 mx-auto" alt="" />
